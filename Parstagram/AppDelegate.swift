@@ -23,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://warm-reef-58874.herokuapp.com/parse"
             })
         )
+        
+        if PFUser.current() != nil{
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            
+            let feedviewcontroller = main.instantiateViewController(withIdentifier: "navigationcontroller")
+            
+            window?.rootViewController = feedviewcontroller
+        }
+        
         return true
     }
 
